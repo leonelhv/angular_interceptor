@@ -1,1 +1,18 @@
-<p>home works!</p>
+<div class="flex flex-col gap-4 my-6">
+  <h1 class="text-4xl font-bold">Usuarios</h1>
+  <button
+    class="bg-blue-500 text-white p-2 rounded-md max-w-max"
+    (click)="mostrarUsuarios()"
+  >
+    Mostrar Usuarios
+  </button>
+</div>
+
+<div class="mt-6">
+  <ul>
+    <!-- Utiliza la variable Observable users$ y se subscribe con el pipe async y cuando se destruye el componente se desuscribe automaticamente-->
+    <li class="list-disc" *ngFor="let user of users$ | async">
+      {{ user.name }}
+    </li>
+  </ul>
+</div>
